@@ -11,8 +11,12 @@
     <RepositoryUrl>https://github.com/RafaelEstevamReis/SimpleOleDB</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>OleDB</PackageTags>
-    <PackageReleaseNotes>Paired with commit 
+    <PackageReleaseNotes>Paired with commit f87a8e3
 https://github.com/RafaelEstevamReis/SimpleOleDB</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp3.1|AnyCPU'">
+    <DocumentationFile>..\Simple.OleDB.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

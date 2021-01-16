@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Simple.OleDB</name>
+    </assembly>
+    <members>
+        <member name="T:Simple.OleDB.OleDb">
+            <summary>
+            Represents an OleDB provider
+            </summary>
+        </member>
+        <member name="M:Simple.OleDB.OleDb.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:Simple.OleDB.OleDb.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:Simple.OleDB.OleDb.GetAllTables">
+            <summary>
+            Gets all table names
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Simple.OleDB.OleDb.GetTableSchema(System.String)">
+            <summary>
+            Gets schema for the table
+            </summary>
+        </member>
+        <member name="M:Simple.OleDB.OleDb.ExecuteNonQuery(System.String,System.Object)">
+            <summary>
+            Executes an SQL statement and returns the number of rows affected. 
+            </summary>
+        </member>
+        <member name="M:Simple.OleDB.OleDb.ExecuteScalar``1(System.String,System.Object)">
+            <summary>
+            Executes the query, and returns the first column of the first row in the result set returned by the query
+            </summary>
+        </member>
+        <member name="M:Simple.OleDB.OleDb.ExecuteReader(System.String,System.Object)">
+            <summary>
+            Executes the query, and returns a data table with results
+            </summary>
+        </member>
+        <member name="M:Simple.OleDB.OleDb.GetReader``1(System.String,System.Object)">
+            <summary>
+            Executes the query and maps the results to an new T
+            </summary>
+        </member>
+        <member name="M:Simple.OleDB.OleDb.GetAll``1(System.String)">
+            <summary>
+            Get all values on the table mapped to T
+            </summary>
+        </member>
+    </members>
+</doc>
