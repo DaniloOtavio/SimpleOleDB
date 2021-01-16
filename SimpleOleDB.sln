@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{2F5B09B4-AC68-423A-B478-D2BCF6EC6835}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.OleDB", "Simple.OleDB\Simple.OleDB.csproj", "{056E3A59-0D52-4F21-9D1A-6881C75CEDB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F5B09B4-AC68-423A-B478-D2BCF6EC6835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F5B09B4-AC68-423A-B478-D2BCF6EC6835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F5B09B4-AC68-423A-B478-D2BCF6EC6835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F5B09B4-AC68-423A-B478-D2BCF6EC6835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{056E3A59-0D52-4F21-9D1A-6881C75CEDB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{056E3A59-0D52-4F21-9D1A-6881C75CEDB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{056E3A59-0D52-4F21-9D1A-6881C75CEDB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{056E3A59-0D52-4F21-9D1A-6881C75CEDB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D64486DE-A64C-4055-B544-F3D286E3ADE0}
+	EndGlobalSection
+EndGlobal
