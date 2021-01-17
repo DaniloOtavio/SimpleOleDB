@@ -12,6 +12,9 @@ namespace Simple.OleDB
     /// </summary>
     public class OleDb
     {
+        /// <summary>
+        /// Gets the connection string associated with the OleDb object
+        /// </summary>
         public string ConnectionString { get; }
         /// <summary>
         /// Creates a new instance

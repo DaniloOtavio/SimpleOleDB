@@ -9,6 +9,11 @@
             Represents an OleDB provider
             </summary>
         </member>
+        <member name="P:Simple.OleDB.OleDb.ConnectionString">
+            <summary>
+            Gets the connection string associated with the OleDb object
+            </summary>
+        </member>
         <member name="M:Simple.OleDB.OleDb.#ctor(System.String,System.String,System.String)">
             <summary>
             Creates a new instance
