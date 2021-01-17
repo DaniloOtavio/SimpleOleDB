@@ -6,4 +6,10 @@
 
 A very simple OleDB wrapper to plug stuff with
 
-! Caution, OleDB is a Windows Only database access method !
+By the nature of OleDB the installation is brittle and very sensitive to the versions of each microsoft product
+
+## Some warnings
+
+* OleDB is a Windows Only database access method !
+* You must have installed the correct OleDB provider for your database
+* Check the correct OleDB ACE or JET versions for each Excel/Access version you are using
