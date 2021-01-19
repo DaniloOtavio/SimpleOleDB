@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.OleDb;
+using System.IO;
 using System.Linq;
+using ADOX;
 
 namespace Simple.OleDB
 {
@@ -15,29 +17,54 @@ namespace Simple.OleDB
         /// <summary>
         /// Gets the connection string associated with the OleDb object
         /// </summary>
-        public string ConnectionString { get; }
+        public string ConnectionString { get; private set; }
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        public OleDb(string Provider, string FilePath, string Password)
-        {
-            DbConnectionStringBuilder builder = new DbConnectionStringBuilder();
-            builder.Add("Provider", Provider);
-            builder.Add("Data Source", FilePath);
-            if (Password != null)
-            {
-                builder.Add("Database Password", Password);
-            }
-            ConnectionString = builder.ConnectionString;
-        }
-        /// <summary>
-        /// Creates a new instance
-        /// </summary>
-        public OleDb(string FilePath, string Password = null)
-            : this("Microsoft.ACE.OLEDB.12.0", FilePath, Password)
-        { }
+        //public OleDb() { }
+        
+        // Changed to CreateDatabase because the builder was not creating the string properly - 01/19/2021
+        //public OleDb(string Provider, string FilePath, string Password)
+        
+        //{
+        //    DbConnectionStringBuilder builder = new DbConnectionStringBuilder();
+        //    builder.Add("Provider", Provider);
+        //    builder.Add("Data Source", FilePath);
+        //    if (Password != null)
+        //    {
+        //        builder.Add("Database Password", Password);
+        //    }
+        //    ConnectionString = builder.ConnectionString;
+        //}
 
-        private OleDbConnection getConnection()
+        /// <summary>
+        /// Create an Access Database an set its ConnectionString
+        /// </summary>
+        /// <param name="nameDB">Database name</param>
+        /// <param name="passWord">Database password</param>
+        public void CreateDatabase(string nameDB, string passWord)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory;
+
+            ConnectionString = @$"Provider =Microsoft.ACE.OLEDB.12.0;Data Source={path}\{nameDB}.accdb;Jet OLEDB:Database Password={passWord}";
+
+            if (!File.Exists(@$"{path}\{nameDB}.accdb"))
+            {
+                CatalogClass cat = new CatalogClass();
+                cat.Create(ConnectionString);
+                cat = null;
+            }
+        }
+
+        /// It's not necessary to create this instance because the ConnectionString is already filled on CreateDatabase
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        //public OleDb(string FilePath, string Password = null)
+        //    : this("Microsoft.ACE.OLEDB.12.0", FilePath, Password)
+        //{ }
+
+        public OleDbConnection getConnection()
         {
             var cnn = new OleDbConnection(ConnectionString);
             cnn.Open();
